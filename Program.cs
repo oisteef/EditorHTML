@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EditorHtml 
+namespace EditorHtml
 {
     class Program
     {

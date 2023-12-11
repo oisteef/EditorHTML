@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 
 namespace EditorHtml
 {
@@ -13,7 +14,8 @@ namespace EditorHtml
             DrawScreen();
             WriteOptions();
 
-            var option = short.Parse
+            var option = short.Parse(Console.ReadLine());
+            HandleMenuOption(option);
         }
 
         public static void DrawScreen()
@@ -47,8 +49,9 @@ namespace EditorHtml
 
         }
     
-        public static void WriteOptions()
+        public static void WriteOptions() 
         {
+        
             Console.SetCursorPosition(3,2);
             Console.WriteLine("Editor HTML");
             Console.SetCursorPosition(3,3);
@@ -62,7 +65,24 @@ namespace EditorHtml
             Console.SetCursorPosition(3,9);
             Console.WriteLine("0 - Sair");
             Console.SetCursorPosition(3,10);
-            Console.WriteLine("Opção: ");
+            Console.Write("Opção: ");
+        }
+    
+        public static void HandleMenuOption(short option)
+        {
+            switch (option)
+            {
+                case 1: Editor.Show(); break;
+                case 2: Console.WriteLine("View"); break;
+                case 0: 
+                    {
+                        Console.Clear();
+                        Environment.Exit(0);
+                        break;
+                    }
+                default: Show(); break;
+
+            }
         }
     }
 
