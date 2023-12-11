@@ -34,7 +34,7 @@ namespace EditorHtml
                         words[i].Substring(
                             words[i].IndexOf('>') + 1,
                             (
-                                //(words[i].LastIndexOf('<') -1) -
+                                (words[i].LastIndexOf('<') - 1) -
                                 words[i].LastIndexOf('>')
                             )
                         )
